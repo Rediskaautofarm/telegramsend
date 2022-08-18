@@ -194,6 +194,7 @@ async def process_name(message: types.Message, state: FSMContext):
 @dp.message_handler(state=Form.links)
 async def process_name(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
+    	data["device"] = message.text
     	user_Id = str(message.from_user.id)
     	with open(f"{user_Id}.json", "r") as file:
     		profile_info = json.load(file)
@@ -205,7 +206,7 @@ async def process_name(message: types.Message, state: FSMContext):
     	data["links"] = message.text
     	linksi=data["links"]
     	email=profile_info["email"]
-    	device_Id=profile_info["deviceid"]
+    	device_Id=data["device"]
     	passwor=profile_info["password"]
     	aminocoin=profile_info["coinsend1"]
     	linkcommin=profile_info["linkcomm"]
