@@ -206,7 +206,7 @@ async def process_name(message: types.Message, state: FSMContext):
     	data["links"] = message.text
     	linksi=data["links"]
     	email=profile_info["email"]
-    	device_Id=data["device"]
+    	device_Id=profile_info["deviceid"]
     	passwor=profile_info["password"]
     	aminocoin=profile_info["coinsend1"]
     	linkcommin=profile_info["linkcomm"]
@@ -279,6 +279,7 @@ async def process_name(message: types.Message, state: FSMContext):
 		profile_info["deviceid"] = f"{device}"
 		with open(f"{user_Id}.json", "w") as file:
 		  		json.dump(profile_info, file)
+		  		await message.reply("сохранено")
 		  		await Form.start.set()
     		
 
