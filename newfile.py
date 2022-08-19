@@ -211,6 +211,7 @@ async def process_name(message: types.Message, state: FSMContext):
     	aminocoin=profile_info["coinsend1"]
     	linkcommin=profile_info["linkcomm"]
     	sendemino = int(aminocoin)
+        print(device_Id)
     	await message.reply("обработка...")
     	client = aminofix.Client(deviceId=device_Id)
     	client.login(email=email, password=passwor)
