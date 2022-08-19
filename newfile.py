@@ -12,7 +12,7 @@ from aiogram.dispatcher.filters import Text
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.types import ParseMode, Message
 from aiogram.utils import executor
-TOKEN_Telegram = "5597440969:AAFBH7if6Y9UJeW4MF87uDjLsaXoBRi0P9Q"
+TOKEN_Telegram = "5403234852:AAEGGUs8L5zrQ7o8b4xOnA1F-sLS2ifVd4M"
 
 class Form(StatesGroup):
 	name = State()
@@ -211,8 +211,8 @@ async def process_name(message: types.Message, state: FSMContext):
     	aminocoin=profile_info["coinsend1"]
     	linkcommin=profile_info["linkcomm"]
     	sendemino = int(aminocoin)
-        print(device_Id)
     	await message.reply("обработка...")
+    	print(device_Id)
     	client = aminofix.Client(deviceId=device_Id)
     	client.login(email=email, password=passwor)
     	client.join_community(comId=f"{comm}")
